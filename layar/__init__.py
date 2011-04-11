@@ -139,10 +139,7 @@ class LayarView(object):
     results_per_page = 15
     max_results = 50
     default_radius = 1000
-    verify_hash = True
-
-    def __init__(self):
-        self.developer_key = settings.LAYAR_DEVELOPER_KEY
+    verify_hash = False
 
     def __call__(self, request):
         try:
@@ -150,7 +147,7 @@ class LayarView(object):
 
             # required parameters
             user_id = request.GET['userId']
-            developer_id = request.GET['developerId']
+            #developer_id = request.GET['developerId']
             developer_hash = request.GET['developerHash']
             timestamp = request.GET['timestamp']
             layer_name = request.GET['layerName']
